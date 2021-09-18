@@ -13,7 +13,7 @@ export default class ApiComponent extends Component {
   handleClick = async () => {
     this.setState({ displayStr: "Loading...",buttonIsEnabled:false,imageUrl:"" });
     let res = await (await api.get("/")).data.results[0];
-    await this.sleep(1500);
+    await this.sleep(900);
     var str = res.name.first + "-" + res.name.last;
     console.log(res);
     this.setState({ displayStr: str,buttonIsEnabled:true,imageUrl:res.picture.large });
